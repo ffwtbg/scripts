@@ -5,6 +5,7 @@ BRANCH="experimental"
 VERSION="0.8.11"
 BROKEN="1"
 GLUONBRANCH="v2016.2.6"
+TARGETS=ar71xx-generic,ar71xx-nand,brcm2708-bcm2708,brcm2708-bcm2709,mpc85xx-generic,x86-generic,x86-kvm_guest,x86-64,x86-xen_domu
 
 # create output folder
 mkdir -p log
@@ -31,32 +32,11 @@ echo "Running 'make update'"
 make update &> log/mkupdate.log
 
 # make
-echo "Running 'make' ar71xx-generic"
-make GLUON_TARGET=ar71xx-generic -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' ar71xx-nand"
-make GLUON_TARGET=ar71xx-nand -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' brcm2708-bcm2708"
-make GLUON_TARGET=brcm2708-bcm2708 -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' brcm2708-bcm2709"
-make GLUON_TARGET=brcm2708-bcm2709 -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' mpc85xx-generic"
-make GLUON_TARGET=mpc85xx-generic -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' x86-generic"
-make GLUON_TARGET=x86-generic -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' x86-kvm_guest"
-make GLUON_TARGET=x86-kvm_guest -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' x86-64"
-make GLUON_TARGET=x86-64 -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' x86-xen_domu"
-make GLUON_TARGET=x86-xen_domu -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+for TARGET in $(echo $TARGETS | sed "s/,/ /g")
+do
+    echo "$TARGET"
+	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+done
 
 # create zip archive
 tar cfzv /media/sdb1/html/kernstadt_${VERSION}_${BRANCH}.tar.gz output/images
@@ -76,32 +56,11 @@ echo "Running 'make update'"
 make update &> log/mkupdate.log
 
 # make
-echo "Running 'make' ar71xx-generic"
-make GLUON_TARGET=ar71xx-generic -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' ar71xx-nand"
-make GLUON_TARGET=ar71xx-nand -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' brcm2708-bcm2708"
-make GLUON_TARGET=brcm2708-bcm2708 -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' brcm2708-bcm2709"
-make GLUON_TARGET=brcm2708-bcm2709 -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' mpc85xx-generic"
-make GLUON_TARGET=mpc85xx-generic -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' x86-generic"
-make GLUON_TARGET=x86-generic -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' x86-kvm_guest"
-make GLUON_TARGET=x86-kvm_guest -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' x86-64"
-make GLUON_TARGET=x86-64 -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' x86-xen_domu"
-make GLUON_TARGET=x86-xen_domu -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+for TARGET in $(echo $TARGETS | sed "s/,/ /g")
+do
+    echo "$TARGET"
+	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+done
 
 # create zip archive
 tar cfzv /media/sdb1/html/doerfer_${VERSION}_${BRANCH}.tar.gz output/images
@@ -121,32 +80,11 @@ echo "Running 'make update'"
 make update &> log/mkupdate.log
 
 # make
-echo "Running 'make' ar71xx-generic"
-make GLUON_TARGET=ar71xx-generic -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' ar71xx-nand"
-make GLUON_TARGET=ar71xx-nand -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' brcm2708-bcm2708"
-make GLUON_TARGET=brcm2708-bcm2708 -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' brcm2708-bcm2709"
-make GLUON_TARGET=brcm2708-bcm2709 -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' mpc85xx-generic"
-make GLUON_TARGET=mpc85xx-generic -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' x86-generic"
-make GLUON_TARGET=x86-generic -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' x86-kvm_guest"
-make GLUON_TARGET=x86-kvm_guest -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' x86-64"
-make GLUON_TARGET=x86-64 -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' x86-xen_domu"
-make GLUON_TARGET=x86-xen_domu -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+for TARGET in $(echo $TARGETS | sed "s/,/ /g")
+do
+    echo "$TARGET"
+	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+done
 
 # create zip archive
 tar cfzv /media/sdb1/html/medebach_${VERSION}_${BRANCH}.tar.gz output/images
@@ -166,32 +104,11 @@ echo "Running 'make update'"
 make update &> log/mkupdate.log
 
 # make
-echo "Running 'make' ar71xx-generic"
-make GLUON_TARGET=ar71xx-generic -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' ar71xx-nand"
-make GLUON_TARGET=ar71xx-nand -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' brcm2708-bcm2708"
-make GLUON_TARGET=brcm2708-bcm2708 -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' brcm2708-bcm2709"
-make GLUON_TARGET=brcm2708-bcm2709 -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' mpc85xx-generic"
-make GLUON_TARGET=mpc85xx-generic -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' x86-generic"
-make GLUON_TARGET=x86-generic -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' x86-kvm_guest"
-make GLUON_TARGET=x86-kvm_guest -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' x86-64"
-make GLUON_TARGET=x86-64 -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' x86-xen_domu"
-make GLUON_TARGET=x86-xen_domu -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+for TARGET in $(echo $TARGETS | sed "s/,/ /g")
+do
+    echo "$TARGET"
+	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+done
 
 # create zip archive
 tar cfzv /media/sdb1/html/hallenberg_${VERSION}_${BRANCH}.tar.gz output/images
@@ -211,32 +128,11 @@ echo "Running 'make update'"
 make update &> log/mkupdate.log
 
 # make
-echo "Running 'make' ar71xx-generic"
-make GLUON_TARGET=ar71xx-generic -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' ar71xx-nand"
-make GLUON_TARGET=ar71xx-nand -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' brcm2708-bcm2708"
-make GLUON_TARGET=brcm2708-bcm2708 -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' brcm2708-bcm2709"
-make GLUON_TARGET=brcm2708-bcm2709 -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' mpc85xx-generic"
-make GLUON_TARGET=mpc85xx-generic -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' x86-generic"
-make GLUON_TARGET=x86-generic -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' x86-kvm_guest"
-make GLUON_TARGET=x86-kvm_guest -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' x86-64"
-make GLUON_TARGET=x86-64 -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' x86-xen_domu"
-make GLUON_TARGET=x86-xen_domu -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+for TARGET in $(echo $TARGETS | sed "s/,/ /g")
+do
+    echo "$TARGET"
+	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+done
 
 # create zip archive
 tar cfzv /media/sdb1/html/siedlinghausen_${VERSION}_${BRANCH}.tar.gz output/images
@@ -256,32 +152,11 @@ echo "Running 'make update'"
 make update &> log/mkupdate.log
 
 # make
-echo "Running 'make' ar71xx-generic"
-make GLUON_TARGET=ar71xx-generic -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' ar71xx-nand"
-make GLUON_TARGET=ar71xx-nand -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' brcm2708-bcm2708"
-make GLUON_TARGET=brcm2708-bcm2708 -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' brcm2708-bcm2709"
-make GLUON_TARGET=brcm2708-bcm2709 -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' mpc85xx-generic"
-make GLUON_TARGET=mpc85xx-generic -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' x86-generic"
-make GLUON_TARGET=x86-generic -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' x86-kvm_guest"
-make GLUON_TARGET=x86-kvm_guest -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' x86-64"
-make GLUON_TARGET=x86-64 -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-
-echo "Running 'make' x86-xen_domu"
-make GLUON_TARGET=x86-xen_domu -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+for TARGET in $(echo $TARGETS | sed "s/,/ /g")
+do
+    echo "$TARGET"
+	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+done
 
 # create zip archive
 tar cfzv /media/sdb1/html/hoehendoerfer_${VERSION}_${BRANCH}.tar.gz output/images
