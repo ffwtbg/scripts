@@ -4,6 +4,7 @@
 BRANCH="experimental"
 VERSION="0.8.11"
 BROKEN="1"
+GLUONBRANCH="v2016.2.6"
 
 # create output folder
 mkdir -p log
@@ -14,7 +15,7 @@ rm -rf output
 rm -rf site_ffwtbg
 
 # download site config
-git clone https://github.com/ffwtbg/site.git -b v2016.2.6 site_ffwtbg
+git clone https://github.com/ffwtbg/site.git -b $GLUONBRANCH site_ffwtbg
 
 # create site folder
 mkdir site
