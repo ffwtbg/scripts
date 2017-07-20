@@ -43,7 +43,7 @@ tar cfzv /media/sdb1/html/kernstadt_${VERSION}_${BRANCH}.tar.gz output/images
 
 # clean the folders
 rm -rf output/*
-rm -rf site
+rm -rf site/*
 
 #################
 ###  Doerfer  ###
@@ -67,7 +67,7 @@ tar cfzv /media/sdb1/html/doerfer_${VERSION}_${BRANCH}.tar.gz output/images
 
 # clean the folders
 rm -rf output/*
-rm -rf site
+rm -rf site/*
 
 ##################
 ###  Medebach  ###
@@ -91,7 +91,7 @@ tar cfzv /media/sdb1/html/medebach_${VERSION}_${BRANCH}.tar.gz output/images
 
 # clean the folders
 rm -rf output/*
-rm -rf site
+rm -rf site/*
 
 ##################
 ### Hallenberg ###
@@ -115,7 +115,7 @@ tar cfzv /media/sdb1/html/hallenberg_${VERSION}_${BRANCH}.tar.gz output/images
 
 # clean the folders
 rm -rf output/*
-rm -rf site
+rm -rf site/*
 
 ######################
 ### Siedlinghausen ###
@@ -139,7 +139,7 @@ tar cfzv /media/sdb1/html/siedlinghausen_${VERSION}_${BRANCH}.tar.gz output/imag
 
 # clean the folders
 rm -rf output/*
-rm -rf site
+rm -rf site/*
 
 #####################
 ### Hoehendoerfer ###
@@ -163,4 +163,4 @@ tar cfzv /media/sdb1/html/hoehendoerfer_${VERSION}_${BRANCH}.tar.gz output/image
 
 # clean the folders
 rm -rf output/*
-rm -rf site
+rm -rf site/*
