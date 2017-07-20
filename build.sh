@@ -7,6 +7,9 @@ BROKEN="1"
 GLUONBRANCH="v2016.2.6"
 TARGETS=ar71xx-generic,ar71xx-nand,brcm2708-bcm2708,brcm2708-bcm2709,mpc85xx-generic,x86-generic,x86-kvm_guest,x86-64,x86-xen_domu
 
+# start time logging
+before=$(date +%s)
+
 # create output folder
 mkdir -p log
 
@@ -164,3 +167,7 @@ tar cfzv /media/sdb1/html/hoehendoerfer_${VERSION}_${BRANCH}.tar.gz output/image
 # clean the folders
 rm -rf output/*
 rm -rf site/*
+
+# end time logging
+after=$(date +%s)
+echo "elapsed time:" $((after - $before)) "seconds"
