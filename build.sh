@@ -18,17 +18,16 @@ rm -rf site
 rm -rf output
 rm -rf site_ffwtbg
 
-# download site config
+# download site config and deploy static config files
 git clone https://github.com/ffwtbg/site.git -b $GLUONBRANCH site_ffwtbg
-
-# create site folder
 mkdir site
+cp -R site_ffwtbg/site/* site/
 
 #################
 ### Kernstadt ###
 #################
 # copy site config
-cp -R site_ffwtbg/site-kernstadt/* site/
+cp site_ffwtbg/site-kernstadt/site.conf site/site.conf
 
 # make update
 echo "Running 'make update'"
@@ -46,13 +45,13 @@ tar cfzv /media/sdb1/html/kernstadt_${VERSION}_${BRANCH}.tar.gz output/images
 
 # clean the folders
 rm -rf output/*
-rm -rf site/*
+rm -f site/site.conf
 
 #################
 ###  Doerfer  ###
 #################
 # copy site config
-cp -R site_ffwtbg/site-doerfer/* site/
+cp site_ffwtbg/site-doerfer/site.conf site/site.conf
 
 # make update
 echo "Running 'make update'"
@@ -70,13 +69,13 @@ tar cfzv /media/sdb1/html/doerfer_${VERSION}_${BRANCH}.tar.gz output/images
 
 # clean the folders
 rm -rf output/*
-rm -rf site/*
+rm -f site/site.conf
 
 ##################
 ###  Medebach  ###
 ##################
 # copy site config
-cp -R site_ffwtbg/site-medebach/* site/
+cp site_ffwtbg/site-medebach/site.conf site/site.conf
 
 # make update
 echo "Running 'make update'"
@@ -94,13 +93,13 @@ tar cfzv /media/sdb1/html/medebach_${VERSION}_${BRANCH}.tar.gz output/images
 
 # clean the folders
 rm -rf output/*
-rm -rf site/*
+rm -f site/site.conf
 
 ##################
 ### Hallenberg ###
 ##################
 # copy site config
-cp -R site_ffwtbg/site-hallenberg/* site/
+cp site_ffwtbg/site-hallenberg/site.conf site/site.conf
 
 # make update
 echo "Running 'make update'"
@@ -118,13 +117,13 @@ tar cfzv /media/sdb1/html/hallenberg_${VERSION}_${BRANCH}.tar.gz output/images
 
 # clean the folders
 rm -rf output/*
-rm -rf site/*
+rm -f site/site.conf
 
 ######################
 ### Siedlinghausen ###
 ######################
 # copy site config
-cp -R site_ffwtbg/site-sdlh/* site/
+cp site_ffwtbg/site-sdlh/site.conf site/site.conf
 
 # make update
 echo "Running 'make update'"
@@ -142,13 +141,13 @@ tar cfzv /media/sdb1/html/siedlinghausen_${VERSION}_${BRANCH}.tar.gz output/imag
 
 # clean the folders
 rm -rf output/*
-rm -rf site/*
+rm -f site/site.conf
 
 #####################
 ### Hoehendoerfer ###
 #####################
 # copy site config
-cp -R site_ffwtbg/site-hoehendoerfer/* site/
+cp site_ffwtbg/site-hoehendoerfer/site.conf site/site.conf
 
 # make update
 echo "Running 'make update'"
@@ -170,4 +169,4 @@ rm -rf site/*
 
 # end time logging
 after=$(date +%s)
-echo "elapsed time:" $((after - $before)) "seconds"
+echo "elapsed time:" $(((after - $before)/60)) "minutes"
