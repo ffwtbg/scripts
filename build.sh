@@ -2,7 +2,7 @@
 
 # variables
 BRANCH="experimental"
-VERSION="0.8.11"
+VERSION="0.8.11.1"
 BROKEN="1"
 GLUONBRANCH="v2016.2.6"
 TARGETS=ar71xx-generic,ar71xx-nand,brcm2708-bcm2708,brcm2708-bcm2709,mpc85xx-generic,x86-generic,x86-kvm_guest,x86-64,x86-xen_domu
