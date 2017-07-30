@@ -325,7 +325,7 @@ BRANCH="custom_ch01"
 ### Kernstadt ###
 #################
 # copy site config
-cp site_ffwtbg/site-kernstadt/site_custom_ch01.conf site/site.conf
+cp site_ffwtbg/site-kernstadt/site_${BRANCH}.conf site/site.conf
 
 # make update
 echo "Running 'make update'"
@@ -349,7 +349,7 @@ rm -f site/site.conf
 ###  Doerfer  ###
 #################
 # copy site config
-cp site_ffwtbg/site-doerfer/site_custom_ch01.conf site/site.conf
+cp site_ffwtbg/site-doerfer/site_${BRANCH}.conf site/site.conf
 
 # make update
 echo "Running 'make update'"
@@ -373,7 +373,7 @@ rm -f site/site.conf
 ###  Medebach  ###
 ##################
 # copy site config
-cp site_ffwtbg/site-medebach/site_custom_ch01.conf site/site.conf
+cp site_ffwtbg/site-medebach/site_${BRANCH}.conf site/site.conf
 
 # make update
 echo "Running 'make update'"
@@ -397,7 +397,7 @@ rm -f site/site.conf
 ### Hallenberg ###
 ##################
 # copy site config
-cp site_ffwtbg/site-hallenberg/site_custom_ch01.conf site/site.conf
+cp site_ffwtbg/site-hallenberg/site_${BRANCH}.conf site/site.conf
 
 # make update
 echo "Running 'make update'"
@@ -421,7 +421,7 @@ rm -f site/site.conf
 ### Siedlinghausen ###
 ######################
 # copy site config
-cp site_ffwtbg/site-sdlh/site_custom_ch01.conf site/site.conf
+cp site_ffwtbg/site-sdlh/site_${BRANCH}.conf site/site.conf
 
 # make update
 echo "Running 'make update'"
@@ -445,7 +445,7 @@ rm -f site/site.conf
 ### Hoehendoerfer ###
 #####################
 # copy site config
-cp site_ffwtbg/site-hoehendoerfer/site_custom_ch01.conf site/site.conf
+cp site_ffwtbg/site-hoehendoerfer/site_${BRANCH}.conf site/site.conf
 
 # make update
 echo "Running 'make update'"
@@ -473,7 +473,7 @@ BRANCH="custom_ch11"
 ### Kernstadt ###
 #################
 # copy site config
-cp site_ffwtbg/site-kernstadt/site_custom_ch11.conf site/site.conf
+cp site_ffwtbg/site-kernstadt/site_${BRANCH}.conf site/site.conf
 
 # make update
 echo "Running 'make update'"
@@ -497,7 +497,7 @@ rm -f site/site.conf
 ###  Doerfer  ###
 #################
 # copy site config
-cp site_ffwtbg/site-doerfer/site_custom_ch11.conf site/site.conf
+cp site_ffwtbg/site-doerfer/site_${BRANCH}.conf site/site.conf
 
 # make update
 echo "Running 'make update'"
@@ -521,7 +521,7 @@ rm -f site/site.conf
 ###  Medebach  ###
 ##################
 # copy site config
-cp site_ffwtbg/site-medebach/site_custom_ch11.conf site/site.conf
+cp site_ffwtbg/site-medebach/site_${BRANCH}.conf site/site.conf
 
 # make update
 echo "Running 'make update'"
@@ -545,7 +545,7 @@ rm -f site/site.conf
 ### Hallenberg ###
 ##################
 # copy site config
-cp site_ffwtbg/site-hallenberg/site_custom_ch11.conf site/site.conf
+cp site_ffwtbg/site-hallenberg/site_${BRANCH}.conf site/site.conf
 
 # make update
 echo "Running 'make update'"
@@ -569,7 +569,7 @@ rm -f site/site.conf
 ### Siedlinghausen ###
 ######################
 # copy site config
-cp site_ffwtbg/site-sdlh/site_custom_ch11.conf site/site.conf
+cp site_ffwtbg/site-sdlh/site_${BRANCH}.conf site/site.conf
 
 # make update
 echo "Running 'make update'"
@@ -593,7 +593,7 @@ rm -f site/site.conf
 ### Hoehendoerfer ###
 #####################
 # copy site config
-cp site_ffwtbg/site-hoehendoerfer/site_custom_ch11.conf site/site.conf
+cp site_ffwtbg/site-hoehendoerfer/site_${BRANCH}.conf site/site.conf
 
 # make update
 echo "Running 'make update'"
