@@ -1,9 +1,9 @@
 #!/bin/bash -e
 
 # variables
-VERSION="0.8.11.1"
+VERSION="0.8.11.3"
 BROKEN="1"
-GLUONBRANCH="v2016.2.6"
+GLUONBRANCH="v2016.2.7"
 TARGETS=ar71xx-generic,ar71xx-nand,brcm2708-bcm2708,brcm2708-bcm2709,mpc85xx-generic,x86-generic,x86-kvm_guest,x86-64,x86-xen_domu
 
 # start time logging
