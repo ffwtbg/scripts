@@ -42,6 +42,10 @@ do
 	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
+# sign firmware
+make manifest GLUON_BRANCH=${BRANCH}
+./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
+
 # create zip archive
 tar cfzv /media/sdb1/html/kernstadt_${VERSION}_${BRANCH}.tar.gz output/images
 
@@ -65,6 +69,10 @@ do
     echo "$TARGET"
 	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
+
+# sign firmware
+make manifest GLUON_BRANCH=${BRANCH}
+./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
 
 # create zip archive
 tar cfzv /media/sdb1/html/doerfer_${VERSION}_${BRANCH}.tar.gz output/images
@@ -90,6 +98,10 @@ do
 	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
+# sign firmware
+make manifest GLUON_BRANCH=${BRANCH}
+./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
+
 # create zip archive
 tar cfzv /media/sdb1/html/medebach_${VERSION}_${BRANCH}.tar.gz output/images
 
@@ -113,6 +125,10 @@ do
     echo "$TARGET"
 	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
+
+# sign firmware
+make manifest GLUON_BRANCH=${BRANCH}
+./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
 
 # create zip archive
 tar cfzv /media/sdb1/html/hallenberg_${VERSION}_${BRANCH}.tar.gz output/images
@@ -138,6 +154,10 @@ do
 	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
+# sign firmware
+make manifest GLUON_BRANCH=${BRANCH}
+./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
+
 # create zip archive
 tar cfzv /media/sdb1/html/siedlinghausen_${VERSION}_${BRANCH}.tar.gz output/images
 
@@ -161,6 +181,10 @@ do
     echo "$TARGET"
 	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
+
+# sign firmware
+make manifest GLUON_BRANCH=${BRANCH}
+./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
 
 # create zip archive
 tar cfzv /media/sdb1/html/hoehendoerfer_${VERSION}_${BRANCH}.tar.gz output/images
@@ -190,6 +214,10 @@ do
 	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
+# sign firmware
+make manifest GLUON_BRANCH=${BRANCH}
+./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
+
 # create zip archive
 tar cfzv /media/sdb1/html/kernstadt_${VERSION}_${BRANCH}.tar.gz output/images
 
@@ -213,6 +241,10 @@ do
     echo "$TARGET"
 	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
+
+# sign firmware
+make manifest GLUON_BRANCH=${BRANCH}
+./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
 
 # create zip archive
 tar cfzv /media/sdb1/html/doerfer_${VERSION}_${BRANCH}.tar.gz output/images
@@ -238,6 +270,10 @@ do
 	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
+# sign firmware
+make manifest GLUON_BRANCH=${BRANCH}
+./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
+
 # create zip archive
 tar cfzv /media/sdb1/html/medebach_${VERSION}_${BRANCH}.tar.gz output/images
 
@@ -261,6 +297,10 @@ do
     echo "$TARGET"
 	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
+
+# sign firmware
+make manifest GLUON_BRANCH=${BRANCH}
+./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
 
 # create zip archive
 tar cfzv /media/sdb1/html/hallenberg_${VERSION}_${BRANCH}.tar.gz output/images
@@ -286,6 +326,10 @@ do
 	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
+# sign firmware
+make manifest GLUON_BRANCH=${BRANCH}
+./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
+
 # create zip archive
 tar cfzv /media/sdb1/html/siedlinghausen_${VERSION}_${BRANCH}.tar.gz output/images
 
@@ -309,6 +353,10 @@ do
     echo "$TARGET"
 	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
+
+# sign firmware
+make manifest GLUON_BRANCH=${BRANCH}
+./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
 
 # create zip archive
 tar cfzv /media/sdb1/html/hoehendoerfer_${VERSION}_${BRANCH}.tar.gz output/images
@@ -338,6 +386,10 @@ do
 	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
+# sign firmware
+make manifest GLUON_BRANCH=${BRANCH}
+./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
+
 # create zip archive
 tar cfzv /media/sdb1/html/kernstadt_${VERSION}_${BRANCH}.tar.gz output/images
 
@@ -361,6 +413,10 @@ do
     echo "$TARGET"
 	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
+
+# sign firmware
+make manifest GLUON_BRANCH=${BRANCH}
+./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
 
 # create zip archive
 tar cfzv /media/sdb1/html/doerfer_${VERSION}_${BRANCH}.tar.gz output/images
@@ -386,6 +442,10 @@ do
 	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
+# sign firmware
+make manifest GLUON_BRANCH=${BRANCH}
+./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
+
 # create zip archive
 tar cfzv /media/sdb1/html/medebach_${VERSION}_${BRANCH}.tar.gz output/images
 
@@ -409,6 +469,10 @@ do
     echo "$TARGET"
 	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
+
+# sign firmware
+make manifest GLUON_BRANCH=${BRANCH}
+./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
 
 # create zip archive
 tar cfzv /media/sdb1/html/hallenberg_${VERSION}_${BRANCH}.tar.gz output/images
@@ -434,6 +498,10 @@ do
 	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
+# sign firmware
+make manifest GLUON_BRANCH=${BRANCH}
+./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
+
 # create zip archive
 tar cfzv /media/sdb1/html/siedlinghausen_${VERSION}_${BRANCH}.tar.gz output/images
 
@@ -457,6 +525,10 @@ do
     echo "$TARGET"
 	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
+
+# sign firmware
+make manifest GLUON_BRANCH=${BRANCH}
+./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
 
 # create zip archive
 tar cfzv /media/sdb1/html/hoehendoerfer_${VERSION}_${BRANCH}.tar.gz output/images
@@ -486,6 +558,10 @@ do
 	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
+# sign firmware
+make manifest GLUON_BRANCH=${BRANCH}
+./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
+
 # create zip archive
 tar cfzv /media/sdb1/html/kernstadt_${VERSION}_${BRANCH}.tar.gz output/images
 
@@ -509,6 +585,10 @@ do
     echo "$TARGET"
 	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
+
+# sign firmware
+make manifest GLUON_BRANCH=${BRANCH}
+./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
 
 # create zip archive
 tar cfzv /media/sdb1/html/doerfer_${VERSION}_${BRANCH}.tar.gz output/images
@@ -534,6 +614,10 @@ do
 	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
+# sign firmware
+make manifest GLUON_BRANCH=${BRANCH}
+./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
+
 # create zip archive
 tar cfzv /media/sdb1/html/medebach_${VERSION}_${BRANCH}.tar.gz output/images
 
@@ -557,6 +641,10 @@ do
     echo "$TARGET"
 	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
+
+# sign firmware
+make manifest GLUON_BRANCH=${BRANCH}
+./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
 
 # create zip archive
 tar cfzv /media/sdb1/html/hallenberg_${VERSION}_${BRANCH}.tar.gz output/images
@@ -582,6 +670,10 @@ do
 	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
+# sign firmware
+make manifest GLUON_BRANCH=${BRANCH}
+./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
+
 # create zip archive
 tar cfzv /media/sdb1/html/siedlinghausen_${VERSION}_${BRANCH}.tar.gz output/images
 
@@ -605,6 +697,10 @@ do
     echo "$TARGET"
 	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
+
+# sign firmware
+make manifest GLUON_BRANCH=${BRANCH}
+./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
 
 # create zip archive
 tar cfzv /media/sdb1/html/hoehendoerfer_${VERSION}_${BRANCH}.tar.gz output/images
