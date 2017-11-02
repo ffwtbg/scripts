@@ -39,7 +39,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
 # sign firmware
@@ -67,7 +67,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
 # sign firmware
@@ -95,7 +95,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
 # sign firmware
@@ -123,7 +123,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
 # sign firmware
@@ -151,7 +151,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
 # sign firmware
@@ -179,7 +179,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
 # sign firmware
@@ -211,7 +211,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
 # sign firmware
@@ -239,7 +239,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
 # sign firmware
@@ -267,7 +267,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
 # sign firmware
@@ -295,7 +295,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
 # sign firmware
@@ -323,7 +323,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
 # sign firmware
@@ -351,7 +351,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
 # sign firmware
@@ -383,7 +383,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
 # sign firmware
@@ -411,7 +411,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
 # sign firmware
@@ -439,7 +439,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
 # sign firmware
@@ -467,7 +467,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
 # sign firmware
@@ -495,7 +495,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
 # sign firmware
@@ -523,7 +523,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
 # sign firmware
@@ -555,7 +555,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
 # sign firmware
@@ -583,7 +583,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
 # sign firmware
@@ -611,7 +611,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
 # sign firmware
@@ -639,7 +639,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
 # sign firmware
@@ -667,7 +667,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
 # sign firmware
@@ -695,7 +695,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j12 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
 done
 
 # sign firmware
