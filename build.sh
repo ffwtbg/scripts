@@ -4,7 +4,7 @@
 VERSION="0.8.13"
 BROKEN="1"
 GLUONBRANCH="v2017.1.3"
-TARGETS=ar71xx-generic,ar71xx-nand,brcm2708-bcm2708,brcm2708-bcm2709,mpc85xx-generic,x86-generic,x86-kvm_guest,x86-64,x86-xen_domu
+TARGETS=ar71xx-generic,ar71xx-tiny,ar71xx-nand,mpc85xx-generic,brcm2708-bcm2708,brcm2708-bcm2709,mpc85xx-generic,x86-generic,x86-geode,x86-64
 
 # start time logging
 before=$(date +%s)
