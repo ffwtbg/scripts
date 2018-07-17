@@ -1,10 +1,13 @@
 #!/bin/bash -e
 
 # variables
-VERSION="0.8.13"
+VERSION="0.9"
 BROKEN="1"
-GLUONBRANCH="v2017.1.3"
-TARGETS=ar71xx-generic,ar71xx-tiny,ar71xx-nand,mpc85xx-generic,brcm2708-bcm2708,brcm2708-bcm2709,mpc85xx-generic,x86-generic,x86-geode,x86-64
+GLUONBRANCH="v2018.1"
+GLUONRELEASE="0.9"
+TARGETS=ar71xx-generic,ar71xx-tiny,ar71xx-nand,ramips-mt7621,mpc85xx-generic,brcm2708-bcm2708,brcm2708-bcm2709,mpc85xx-generic,x86-generic,x86-geode,x86-64
+CPUCount="40"
+OutputDir="/media/sdb1/html"
 
 # start time logging
 before=$(date +%s)
@@ -39,7 +42,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j${CPUCount} BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH GLUON_RELEASE=$GLUONRELEASE
 done
 
 # sign firmware
@@ -47,7 +50,7 @@ make manifest GLUON_BRANCH=${BRANCH}
 ./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
 
 # create zip archive
-tar cfzv /media/sdb1/html/kernstadt_${VERSION}_${BRANCH}.tar.gz output/images
+tar cfzv ${OutputDir}/kernstadt_${VERSION}_${BRANCH}.tar.gz output/images
 
 # clean the folders
 rm -rf output/*
@@ -67,7 +70,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j${CPUCount} BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH GLUON_RELEASE=$GLUONRELEASE
 done
 
 # sign firmware
@@ -75,7 +78,7 @@ make manifest GLUON_BRANCH=${BRANCH}
 ./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
 
 # create zip archive
-tar cfzv /media/sdb1/html/doerfer_${VERSION}_${BRANCH}.tar.gz output/images
+tar cfzv ${OutputDir}/doerfer_${VERSION}_${BRANCH}.tar.gz output/images
 
 # clean the folders
 rm -rf output/*
@@ -95,7 +98,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j${CPUCount} BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH GLUON_RELEASE=$GLUONRELEASE
 done
 
 # sign firmware
@@ -103,7 +106,7 @@ make manifest GLUON_BRANCH=${BRANCH}
 ./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
 
 # create zip archive
-tar cfzv /media/sdb1/html/medebach_${VERSION}_${BRANCH}.tar.gz output/images
+tar cfzv ${OutputDir}/medebach_${VERSION}_${BRANCH}.tar.gz output/images
 
 # clean the folders
 rm -rf output/*
@@ -123,7 +126,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j${CPUCount} BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH GLUON_RELEASE=$GLUONRELEASE
 done
 
 # sign firmware
@@ -131,7 +134,7 @@ make manifest GLUON_BRANCH=${BRANCH}
 ./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
 
 # create zip archive
-tar cfzv /media/sdb1/html/hallenberg_${VERSION}_${BRANCH}.tar.gz output/images
+tar cfzv ${OutputDir}/hallenberg_${VERSION}_${BRANCH}.tar.gz output/images
 
 # clean the folders
 rm -rf output/*
@@ -151,7 +154,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j${CPUCount} BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH GLUON_RELEASE=$GLUONRELEASE
 done
 
 # sign firmware
@@ -159,7 +162,7 @@ make manifest GLUON_BRANCH=${BRANCH}
 ./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
 
 # create zip archive
-tar cfzv /media/sdb1/html/siedlinghausen_${VERSION}_${BRANCH}.tar.gz output/images
+tar cfzv ${OutputDir}/siedlinghausen_${VERSION}_${BRANCH}.tar.gz output/images
 
 # clean the folders
 rm -rf output/*
@@ -179,7 +182,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j${CPUCount} BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH GLUON_RELEASE=$GLUONRELEASE
 done
 
 # sign firmware
@@ -187,179 +190,7 @@ make manifest GLUON_BRANCH=${BRANCH}
 ./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
 
 # create zip archive
-tar cfzv /media/sdb1/html/hoehendoerfer_${VERSION}_${BRANCH}.tar.gz output/images
-
-# clean the folders
-rm -rf output/*
-rm -f site/site.conf
-
-#####################################################################
-# set Firmware Branch
-BRANCH="experimental"
-
-#################
-### Kernstadt ###
-#################
-# copy site config
-cp site_ffwtbg/site-kernstadt/site.conf site/site.conf
-
-# make update
-echo "Running 'make update'"
-make update &> log/mkupdate.log
-
-# make
-for TARGET in $(echo $TARGETS | sed "s/,/ /g")
-do
-    echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-done
-
-# sign firmware
-make manifest GLUON_BRANCH=${BRANCH}
-./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
-
-# create zip archive
-tar cfzv /media/sdb1/html/kernstadt_${VERSION}_${BRANCH}.tar.gz output/images
-
-# clean the folders
-rm -rf output/*
-rm -f site/site.conf
-
-#################
-###  Doerfer  ###
-#################
-# copy site config
-cp site_ffwtbg/site-doerfer/site.conf site/site.conf
-
-# make update
-echo "Running 'make update'"
-make update &> log/mkupdate.log
-
-# make
-for TARGET in $(echo $TARGETS | sed "s/,/ /g")
-do
-    echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-done
-
-# sign firmware
-make manifest GLUON_BRANCH=${BRANCH}
-./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
-
-# create zip archive
-tar cfzv /media/sdb1/html/doerfer_${VERSION}_${BRANCH}.tar.gz output/images
-
-# clean the folders
-rm -rf output/*
-rm -f site/site.conf
-
-##################
-###  Medebach  ###
-##################
-# copy site config
-cp site_ffwtbg/site-medebach/site.conf site/site.conf
-
-# make update
-echo "Running 'make update'"
-make update &> log/mkupdate.log
-
-# make
-for TARGET in $(echo $TARGETS | sed "s/,/ /g")
-do
-    echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-done
-
-# sign firmware
-make manifest GLUON_BRANCH=${BRANCH}
-./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
-
-# create zip archive
-tar cfzv /media/sdb1/html/medebach_${VERSION}_${BRANCH}.tar.gz output/images
-
-# clean the folders
-rm -rf output/*
-rm -f site/site.conf
-
-##################
-### Hallenberg ###
-##################
-# copy site config
-cp site_ffwtbg/site-hallenberg/site.conf site/site.conf
-
-# make update
-echo "Running 'make update'"
-make update &> log/mkupdate.log
-
-# make
-for TARGET in $(echo $TARGETS | sed "s/,/ /g")
-do
-    echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-done
-
-# sign firmware
-make manifest GLUON_BRANCH=${BRANCH}
-./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
-
-# create zip archive
-tar cfzv /media/sdb1/html/hallenberg_${VERSION}_${BRANCH}.tar.gz output/images
-
-# clean the folders
-rm -rf output/*
-rm -f site/site.conf
-
-######################
-### Siedlinghausen ###
-######################
-# copy site config
-cp site_ffwtbg/site-sdlh/site.conf site/site.conf
-
-# make update
-echo "Running 'make update'"
-make update &> log/mkupdate.log
-
-# make
-for TARGET in $(echo $TARGETS | sed "s/,/ /g")
-do
-    echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-done
-
-# sign firmware
-make manifest GLUON_BRANCH=${BRANCH}
-./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
-
-# create zip archive
-tar cfzv /media/sdb1/html/siedlinghausen_${VERSION}_${BRANCH}.tar.gz output/images
-
-# clean the folders
-rm -rf output/*
-rm -f site/site.conf
-
-#####################
-### Hoehendoerfer ###
-#####################
-# copy site config
-cp site_ffwtbg/site-hoehendoerfer/site.conf site/site.conf
-
-# make update
-echo "Running 'make update'"
-make update &> log/mkupdate.log
-
-# make
-for TARGET in $(echo $TARGETS | sed "s/,/ /g")
-do
-    echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
-done
-
-# sign firmware
-make manifest GLUON_BRANCH=${BRANCH}
-./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
-
-# create zip archive
-tar cfzv /media/sdb1/html/hoehendoerfer_${VERSION}_${BRANCH}.tar.gz output/images
+tar cfzv ${OutputDir}/hoehendoerfer_${VERSION}_${BRANCH}.tar.gz output/images
 
 # clean the folders
 rm -rf output/*
@@ -383,7 +214,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j${CPUCount} BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH GLUON_RELEASE=$GLUONRELEASE
 done
 
 # sign firmware
@@ -391,7 +222,7 @@ make manifest GLUON_BRANCH=${BRANCH}
 ./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
 
 # create zip archive
-tar cfzv /media/sdb1/html/kernstadt_${VERSION}_${BRANCH}.tar.gz output/images
+tar cfzv ${OutputDir}/kernstadt_${VERSION}_${BRANCH}.tar.gz output/images
 
 # clean the folders
 rm -rf output/*
@@ -411,7 +242,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j${CPUCount} BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH GLUON_RELEASE=$GLUONRELEASE
 done
 
 # sign firmware
@@ -419,7 +250,7 @@ make manifest GLUON_BRANCH=${BRANCH}
 ./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
 
 # create zip archive
-tar cfzv /media/sdb1/html/doerfer_${VERSION}_${BRANCH}.tar.gz output/images
+tar cfzv ${OutputDir}/doerfer_${VERSION}_${BRANCH}.tar.gz output/images
 
 # clean the folders
 rm -rf output/*
@@ -439,7 +270,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j${CPUCount} BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH GLUON_RELEASE=$GLUONRELEASE
 done
 
 # sign firmware
@@ -447,7 +278,7 @@ make manifest GLUON_BRANCH=${BRANCH}
 ./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
 
 # create zip archive
-tar cfzv /media/sdb1/html/medebach_${VERSION}_${BRANCH}.tar.gz output/images
+tar cfzv ${OutputDir}/medebach_${VERSION}_${BRANCH}.tar.gz output/images
 
 # clean the folders
 rm -rf output/*
@@ -467,7 +298,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j${CPUCount} BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH GLUON_RELEASE=$GLUONRELEASE
 done
 
 # sign firmware
@@ -475,7 +306,7 @@ make manifest GLUON_BRANCH=${BRANCH}
 ./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
 
 # create zip archive
-tar cfzv /media/sdb1/html/hallenberg_${VERSION}_${BRANCH}.tar.gz output/images
+tar cfzv ${OutputDir}/hallenberg_${VERSION}_${BRANCH}.tar.gz output/images
 
 # clean the folders
 rm -rf output/*
@@ -495,7 +326,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j${CPUCount} BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH GLUON_RELEASE=$GLUONRELEASE
 done
 
 # sign firmware
@@ -503,7 +334,7 @@ make manifest GLUON_BRANCH=${BRANCH}
 ./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
 
 # create zip archive
-tar cfzv /media/sdb1/html/siedlinghausen_${VERSION}_${BRANCH}.tar.gz output/images
+tar cfzv ${OutputDir}/siedlinghausen_${VERSION}_${BRANCH}.tar.gz output/images
 
 # clean the folders
 rm -rf output/*
@@ -523,7 +354,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j${CPUCount} BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH GLUON_RELEASE=$GLUONRELEASE
 done
 
 # sign firmware
@@ -531,7 +362,7 @@ make manifest GLUON_BRANCH=${BRANCH}
 ./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
 
 # create zip archive
-tar cfzv /media/sdb1/html/hoehendoerfer_${VERSION}_${BRANCH}.tar.gz output/images
+tar cfzv ${OutputDir}/hoehendoerfer_${VERSION}_${BRANCH}.tar.gz output/images
 
 # clean the folders
 rm -rf output/*
@@ -555,7 +386,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j${CPUCount} BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH GLUON_RELEASE=$GLUONRELEASE
 done
 
 # sign firmware
@@ -563,7 +394,7 @@ make manifest GLUON_BRANCH=${BRANCH}
 ./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
 
 # create zip archive
-tar cfzv /media/sdb1/html/kernstadt_${VERSION}_${BRANCH}.tar.gz output/images
+tar cfzv ${OutputDir}/kernstadt_${VERSION}_${BRANCH}.tar.gz output/images
 
 # clean the folders
 rm -rf output/*
@@ -583,7 +414,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j${CPUCount} BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH GLUON_RELEASE=$GLUONRELEASE
 done
 
 # sign firmware
@@ -591,7 +422,7 @@ make manifest GLUON_BRANCH=${BRANCH}
 ./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
 
 # create zip archive
-tar cfzv /media/sdb1/html/doerfer_${VERSION}_${BRANCH}.tar.gz output/images
+tar cfzv ${OutputDir}/doerfer_${VERSION}_${BRANCH}.tar.gz output/images
 
 # clean the folders
 rm -rf output/*
@@ -611,7 +442,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j${CPUCount} BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH GLUON_RELEASE=$GLUONRELEASE
 done
 
 # sign firmware
@@ -619,7 +450,7 @@ make manifest GLUON_BRANCH=${BRANCH}
 ./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
 
 # create zip archive
-tar cfzv /media/sdb1/html/medebach_${VERSION}_${BRANCH}.tar.gz output/images
+tar cfzv ${OutputDir}/medebach_${VERSION}_${BRANCH}.tar.gz output/images
 
 # clean the folders
 rm -rf output/*
@@ -639,7 +470,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j${CPUCount} BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH GLUON_RELEASE=$GLUONRELEASE
 done
 
 # sign firmware
@@ -647,7 +478,7 @@ make manifest GLUON_BRANCH=${BRANCH}
 ./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
 
 # create zip archive
-tar cfzv /media/sdb1/html/hallenberg_${VERSION}_${BRANCH}.tar.gz output/images
+tar cfzv ${OutputDir}/hallenberg_${VERSION}_${BRANCH}.tar.gz output/images
 
 # clean the folders
 rm -rf output/*
@@ -667,7 +498,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j${CPUCount} BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH GLUON_RELEASE=$GLUONRELEASE
 done
 
 # sign firmware
@@ -675,7 +506,7 @@ make manifest GLUON_BRANCH=${BRANCH}
 ./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
 
 # create zip archive
-tar cfzv /media/sdb1/html/siedlinghausen_${VERSION}_${BRANCH}.tar.gz output/images
+tar cfzv ${OutputDir}/siedlinghausen_${VERSION}_${BRANCH}.tar.gz output/images
 
 # clean the folders
 rm -rf output/*
@@ -695,7 +526,7 @@ make update &> log/mkupdate.log
 for TARGET in $(echo $TARGETS | sed "s/,/ /g")
 do
     echo "$TARGET"
-	make GLUON_TARGET=${TARGET} -j20 BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH
+	make GLUON_TARGET=${TARGET} -j${CPUCount} BROKEN=${BROKEN} GLUON_BRANCH=$BRANCH GLUON_RELEASE=$GLUONRELEASE
 done
 
 # sign firmware
@@ -703,7 +534,7 @@ make manifest GLUON_BRANCH=${BRANCH}
 ./contrib/sign.sh ~/key.secret output/images/sysupgrade/${BRANCH}.manifest
 
 # create zip archive
-tar cfzv /media/sdb1/html/hoehendoerfer_${VERSION}_${BRANCH}.tar.gz output/images
+tar cfzv ${OutputDir}/hoehendoerfer_${VERSION}_${BRANCH}.tar.gz output/images
 
 # clean the folders
 rm -rf output/*
